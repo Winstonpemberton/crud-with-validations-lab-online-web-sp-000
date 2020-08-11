@@ -33,7 +33,7 @@ class SongsController < ApplicationController
     end
   end
 
-  private 
+  private
 
   def author_params
     params.permit(:name, :email, :phone_number)
