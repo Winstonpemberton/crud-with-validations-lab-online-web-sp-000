@@ -4,24 +4,24 @@ class SongsController < ApplicationController
     @song = Song.new
   end
 
-  def create 
+  def create
     @song = Song.new(song_params)
-    if @song.valid? 
+    if @song.valid?
       @song.save
       redirect_to song_path(@song)
-    else 
-      render :new 
+    else
+      render :new
     end
   end
 
-  def show 
+  def show
     @song = Song.find(params[:id])
   end
 
-  def edit 
+  def edit
     @song = Song.find(params[:id])
   end
 
-  
+
 
 end
