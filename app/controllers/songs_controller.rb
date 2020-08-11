@@ -29,8 +29,14 @@ class SongsController < ApplicationController
       @song.save
       redirect_to song_path(@song)
     else
-      render :new
+      render :edit
     end
+  end
+
+  private 
+
+  def author_params
+    params.permit(:name, :email, :phone_number)
   end
 
 
