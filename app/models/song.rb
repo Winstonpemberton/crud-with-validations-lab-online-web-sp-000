@@ -2,10 +2,10 @@ class Song < ApplicationRecord
   validates :title, presence: true, uniqueness: { scope: :release_year}
   validates :released, inclusion: { in: %w(true false)}
 
-  with_options if: :is_released?, length: { minimum: 50 } do
-  validates :content, if: -> { content.present? }
+  with_options if: :is_released? do |release|
+  release.validates :release_year, presence: true, numericality: { less_than: Date.current.year }
 
   def is_released?
-  self.released
-end
+    self.released
+  end
 end
