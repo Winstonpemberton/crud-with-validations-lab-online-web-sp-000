@@ -3,8 +3,8 @@ class Song < ApplicationRecord
   validates :released, inclusion: { in: %w(true false)}
 
   with_options if: :is_released? do |release|
-  release.validates :release_year, presence: true, numericality: { less_than: Date.current.year }
-end
+    release.validates :release_year, presence: true, numericality: { less_than: Date.current.year }
+  end
 
   def is_released?
     self.released
