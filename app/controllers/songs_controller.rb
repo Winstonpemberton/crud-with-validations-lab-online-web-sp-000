@@ -26,7 +26,7 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
   end
 
-  def create
+  def update
     @song = Song.find(params[:id])
     @song = Song.assign_attributes(song_params)
     if @song.valid?
