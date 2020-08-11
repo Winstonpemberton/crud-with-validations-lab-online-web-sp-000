@@ -8,4 +8,5 @@ class Song < ApplicationRecord
   def is_released?
     self.released
   end
+  
 end
