@@ -1,4 +1,4 @@
 class Song < ApplicationRecord
-  validates :title, uniqueness: { scope: :release_year}
+  validates :title, presence: true, uniqueness: { scope: :release_year}
 
 end
